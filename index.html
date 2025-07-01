@@ -16,12 +16,29 @@
             }
             header{
                 height: 79px;
+                z-index: 1000;
             }
             main{
-                min-height: 2500px;
+                min-height: 25000px;
+            }
+            .a_m1{
+                height: 119px;
+            }
+            .a_m2{
+                height: 283px;
+            }
+            .a_m3{
+                height: 322px;
             }
             footer{
                 height: 537px;
+            }
+            .carousel-indicators [data-bs-target]{
+                width: 10px;
+                height: 10px;
+                border-radius: 20px !important;
+                background-color: #fff;
+
             }
         </style>
         <script>
@@ -29,8 +46,27 @@
         </script>
     </head>
     <body>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+        </div>
         <div class="container-fluid p-4 pt-0 pb-0 a_tbdr">
-            <header class="a_tbdr">
+            <header class="a_tbdr position-fixed w-100 mb-5 bg-white">
                 <div class="row m-0 h-100">
                     <div class="col-2 p-0 a_tbdr">A</div>
                     <div class="col-4 p-0 a_tbdr">B</div>
@@ -54,13 +90,102 @@
                                 <a class="nav-link" href="#">Link</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                <a class="nav-link bg-primary text-white rounded-5 pt-1 pb-1" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#exampleModal">Login/SignUp</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </header>
-            <main class="a_tbdr">Main</main>
+            <main class="a_tbdr mt-5">
+                <section class="a_m1 a_tbdr mt-5">m1</section>
+                <section class="a_m2 a_tbdr">
+                    <div class="row m-0 h-100">
+                        <div class="col-6 p-0 a_tbdr h-100">
+                            <div id="carouselExampleIndicators" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/banner_cctv_2024.webp" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/banner_cctv_2024.webp" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/banner_cctv_2024.webp" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6 p-0">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="a_m3 a_tbdr"> 
+                    <ul class="nav">
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4 active" aria-current="page" href="#">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4 active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4 active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="a_m4 a_tbdr">m4</section>
+            </main>
             <footer class="a_tbdr">Footer</footer>
         </div>
 
@@ -70,6 +195,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             
+        </script>
+        <script>
+            window.onscroll = function() {
+                
+                console.log('Hello');
+                
+            };
         </script>
     </body>
 </html>

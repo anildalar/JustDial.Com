@@ -1,0 +1,24 @@
+.carousel-indicators [data-bs-target]{
+
+}
+
+Descendant Selector
+parent child{
+
+}
+.carousel-indicators [data-bs-target]{
+
+}
+.anil .sunil{
+
+}
+
+
+window  ==== <body>
+
+
+1. Home Page
+2. Business Listing Page
+3. Business Detail Page
+4. Login
+5. Registration
