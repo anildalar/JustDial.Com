@@ -40,38 +40,58 @@
                 background-color: #fff;
 
             }
+            .a_popular_cities li:hover{
+                text-decoration: underline;
+            }
+            .a_rotate-90{
+                transform: rotate(-90deg);
+                transform-origin: left top;
+                white-space: nowrap;
+            }
+            .a_adv_free{
+                right: -73px !important;
+            }
         </style>
         <script>
 
         </script>
     </head>
     <body>
-        
+         <ul class="a_adv_free nav flex-column position-fixed top-50 end-0">
+            <li class="nav-item a_rotate-90 mb-5">
+                <a class=" rounded-top nav-link active bg-primary text-white" aria-current="page" href="#">Advertise</a>
+            </li>
+            <li class="nav-item a_rotate-90 mt-5">
+                <a class="rounded-top  nav-link bg-warning text-white" href="#">Free Listing</a>
+            </li>
+        </ul>
+        <button onclick="goToTop()" class="btn btn-dark rounded-5 position-fixed bottom-0 end-0 me-2 mb-2 d-none a_gototop">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
             </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div>
-        </div>
         </div>
         <div class="container-fluid p-4 pt-0 pb-0 a_tbdr">
             <header class="a_tbdr position-fixed w-100 mb-5 bg-white">
                 <div class="row m-0 h-100">
                     <div class="col-2 p-0 a_tbdr">A</div>
-                    <div class="col-4 p-0 a_tbdr">B</div>
-                    <div class="col-6 p-0 a_tbdr d-flex align-items-center">
-                        <ul class="nav">
+                    <div class="col-6 p-0 a_tbdr d-flex align-items-center justify-content-end">
+                         <ul class="nav a_wearehiring d-flex">
                             <li class="nav-item">
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,11 +103,25 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item">
+                           <li class="nav-item">
                                 <a class="nav-link text-black" href="#">We are hiring</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link text-black" href="#">Investor Relationship</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 p-0 a_tbdr d-flex align-items-center">
+                        <ul class="nav">
+        
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">Leads</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Advertise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Free Listing</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link bg-primary text-white rounded-5 pt-1 pb-1" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#exampleModal">Login/SignUp</a>
@@ -184,7 +218,22 @@
                         </li>
                     </ul>
                 </section>
-                <section class="a_m4 a_tbdr">m4</section>
+                <section class="a_m4 a_tbdr">
+                    <ul class="nav a_popular_cities">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Indore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Delhi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mumbai</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                        </ul>
+                </section>
             </main>
             <footer class="a_tbdr">Footer</footer>
         </div>
@@ -197,11 +246,36 @@
             
         </script>
         <script>
-            window.onscroll = function() {
-                
-                console.log('Hello');
-                
+            let triggered = false;
+
+            window.onscroll = function () {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+
+                const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
+
+                //const element = document.querySelector('.a_wearehiring');
+                const element = document.querySelector('.a_gototop');
+                if (scrollPercent >= 0.2) {
+                    console.log("Hello World");
+                    if (element.classList.contains("d-none")) {
+                        element.classList.remove("d-none");
+                        element.classList.add("d-flex");
+                    }
+                } else {
+                    if (!element.classList.contains("d-none")) {
+                        element.classList.remove("d-flex");
+                        element.classList.add("d-none");
+                    }
+                }
             };
+        </script>
+        <script>
+            function goToTop(){
+
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
         </script>
     </body>
 </html>
