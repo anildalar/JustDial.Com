@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Find Businesses Near You on Local Search Engine - Justdial</title>
+        <link rel="icon" href="./img/favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .a_tbdr{
+                border:1px dashed red;
+            }
+            body{
+                background-color: #E8E8E8;
+            }
+            header{
+                height: 79px;
+                z-index: 1000;
+            }
+            main{
+                min-height: 25000px;
+            }
+            .a_m1{
+                height: 119px;
+            }
+            .a_m2{
+                height: 283px;
+            }
+            .a_m3{
+                height: 322px;
+            }
+            footer{
+                height: 537px;
+            }
+            .carousel-indicators [data-bs-target]{
+                width: 10px;
+                height: 10px;
+                border-radius: 20px !important;
+                background-color: #fff;
+
+            }
+            .a_popular_cities li:hover{
+                text-decoration: underline;
+            }
+            .a_rotate-90{
+                transform: rotate(-90deg);
+                transform-origin: left top;
+                white-space: nowrap;
+            }
+            .a_adv_free{
+                right: -73px !important;
+            }
+        </style>
+        <script>
+
+        </script>
+    </head>
+    <body>
+         <ul class="a_adv_free nav flex-column position-fixed top-50 end-0">
+            <li class="nav-item a_rotate-90 mb-5">
+                <a class=" rounded-top nav-link active bg-primary text-white" aria-current="page" href="#">Advertise</a>
+            </li>
+            <li class="nav-item a_rotate-90 mt-5">
+                <a class="rounded-top  nav-link bg-warning text-white" href="#">Free Listing</a>
+            </li>
+        </ul>
+        <button onclick="goToTop()" class="btn btn-dark rounded-5 position-fixed bottom-0 end-0 me-2 mb-2 d-none a_gototop">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-4 pt-0 pb-0 a_tbdr">
+            <header class="a_tbdr position-fixed w-100 mb-5 bg-white">
+                <div class="row m-0 h-100">
+                    <div class="col-2 p-0 a_tbdr">A</div>
+                    <div class="col-6 p-0 a_tbdr d-flex align-items-center justify-content-end">
+                         <ul class="nav a_wearehiring d-flex">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-language"></i> En
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                           <li class="nav-item">
+                                <a class="nav-link text-black" href="#">We are hiring</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">Investor Relationship</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 p-0 a_tbdr d-flex align-items-center">
+                        <ul class="nav">
+        
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">Leads</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Advertise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Free Listing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-primary text-white rounded-5 pt-1 pb-1" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#exampleModal">Login/SignUp</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <main class="a_tbdr mt-5">
+                <section class="a_m1 a_tbdr mt-5">m1</section>
+                <section class="a_m2 a_tbdr">
+                    <div class="row m-0 h-100">
+                        <div class="col-6 p-0 a_tbdr h-100">
+                            <div id="carouselExampleIndicators" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                    <img src="https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/banner_cctv_2024.webp" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/banner_cctv_2024.webp" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/banner_cctv_2024.webp" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6 p-0">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="a_m3 a_tbdr"> 
+                    <ul class="nav">
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4 active" aria-current="page" href="#">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4 active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4 active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                        <li class="nav-item rounded-4 border-danger border m-3">
+                            <a class="nav-link p-4" href="#">Link</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="a_m4 a_tbdr">
+                    <ul class="nav a_popular_cities">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Indore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Delhi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mumbai</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                        </ul>
+                </section>
+            </main>
+            <footer class="a_tbdr">Footer</footer>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            
+        </script>
+        <script>
+            let triggered = false;
+
+            window.onscroll = function () {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+
+                const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
+
+                //const element = document.querySelector('.a_wearehiring');
+                const element = document.querySelector('.a_gototop');
+                if (scrollPercent >= 0.2) {
+                    console.log("Hello World");
+                    if (element.classList.contains("d-none")) {
+                        element.classList.remove("d-none");
+                        element.classList.add("d-flex");
+                    }
+                } else {
+                    if (!element.classList.contains("d-none")) {
+                        element.classList.remove("d-flex");
+                        element.classList.add("d-none");
+                    }
+                }
+            };
+        </script>
+        <script>
+            function goToTop(){
+
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+        </script>
+    </body>
+</html>
